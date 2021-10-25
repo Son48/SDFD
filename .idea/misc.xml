@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/drawable/custom_backgroud.xml" value="0.26615384615384613" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/drawable/custom_btn1.xml" value="0.2703125" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/drawable/custom_progress.xml" value="0.26615384615384613" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/drawable/custom_search.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/drawable/ic_baseline_vpn_key_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/drawable/ic_menu_favorite.xml" value="0.2703125" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/drawable/ic_menu_home.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/drawable/ic_search.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/drawable/popular_dish.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/drawable/side_nav_bar.xml" value="0.2703125" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/font/.xml" value="0.2777777777777778" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/activity_logo.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/activity_main.xml" value="0.151268115942029" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/activity_register.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/activity_show_all.xml" value="0.22509057971014493" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/activity_show_diabetes.xml" value="0.18297101449275363" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/activity_show_hear.xml" value="0.24365942028985507" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/activity_show_popular.xml" value="0.1634963768115942" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/activity_show_weightloss.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/activity_view_all.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/app_bar_main.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/content_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/diabete_dish.xml" value="0.23324275362318841" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/fragment_category.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/fragment_favorite.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/fragment_gallery.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/fragment_history.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/fragment_home.xml" value="0.2540650406504065" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/fragment_logout.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/fragment_profile.xml" value="0.176" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/fragment_slideshow.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/hear_dish.xml" value="0.24365942028985507" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/home_cat_items.xml" value="0.23777173913043478" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/nav_header_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/popular_dish.xml" value="0.264" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/toolbar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/view_all_item.xml" value="0.2" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/layout/weightloss_dish.xml" value="0.1634963768115942" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/menu/activity_main_drawer.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/menu/main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/le482/OneDrive/Desktop/androidstudio/SDFD/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
