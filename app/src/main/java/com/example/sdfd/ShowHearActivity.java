@@ -55,11 +55,11 @@ public class ShowHearActivity extends AppCompatActivity {
         tab.addTab(tab1);
         TabHost.TabSpec tab2 = tab.newTabSpec("t2");
         tab2.setContent(R.id.tab2);
-        tab2.setIndicator("INGREDIENTS");
+        tab2.setIndicator("INGREDIENT");
         tab.addTab(tab2);
         TabHost.TabSpec tab3 = tab.newTabSpec("t3");
         tab3.setContent(R.id.tab3);
-        tab3.setIndicator("INSTRUCTIONS");
+        tab3.setIndicator("INSTRUCTION");
         tab.addTab(tab3);
     }
 

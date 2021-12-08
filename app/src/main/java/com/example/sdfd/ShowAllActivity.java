@@ -16,10 +16,10 @@ import com.example.sdfd.models.DiabetesModel;
 import com.example.sdfd.models.ViewAllModel;
 
 public class ShowAllActivity extends AppCompatActivity {
-    ImageView showall;
-    TextView calo,descriptions,name;
+    ImageView showall,showall2,showall3;
+    TextView calo,descriptions,name,type,time,caloall2,nameall2,typeall2,timeall2,ingredientall2,caloall3,nameall3,typeall3,timeall3,instruction3;
     TabHost tab;
-    Button btnexit;
+    Button btnexit,btnexit2,btnexit3;
     ViewAllModel viewAllModel = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +27,31 @@ public class ShowAllActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show_all);
         showall=findViewById(R.id.showall_img);
         calo=findViewById(R.id.showall_calo);
+        type=findViewById(R.id.showall_type);
+        time=findViewById(R.id.showall_time);
         descriptions=findViewById(R.id.descriptionall_show);
         name=findViewById(R.id.name_allshow);
         btnexit=findViewById(R.id.btn_exit);
+
+
+        ingredientall2=findViewById(R.id.ingredient_showall2);
+        showall2=findViewById(R.id.show_all_po_img2);
+        nameall2=findViewById(R.id.show_all_po_name2);
+        caloall2=findViewById(R.id.show_all_po_calo2);
+        btnexit2=findViewById(R.id.btn_exit2);
+        typeall2=findViewById(R.id.show_all_po_type2);
+        timeall2=findViewById(R.id.show_all_po_time2);
+
+        instruction3=findViewById(R.id.instruction_showall3);
+        showall3=findViewById(R.id.show_all_po_img3);
+        nameall3=findViewById(R.id.show_all_po_name3);
+        caloall3=findViewById(R.id.show_all_po_calo3);
+        btnexit3=findViewById(R.id.btn_exit3);
+        typeall3=findViewById(R.id.show_all_po_type3);
+        timeall3=findViewById(R.id.show_all_po_time3);
+
+
+
         addControl();
 
 
@@ -41,9 +63,39 @@ public class ShowAllActivity extends AppCompatActivity {
         Glide.with(getApplicationContext()).load(viewAllModel.getImg_url()).into(showall);
         calo.setText(viewAllModel.getCalo());
         name.setText(viewAllModel.getName());
+        type.setText(viewAllModel.getType());
+        time.setText(viewAllModel.getTime());
         descriptions.setText(viewAllModel.getDescription());
 
+        Glide.with(getApplicationContext()).load(viewAllModel.getImg_url()).into(showall2);
+        caloall2.setText(viewAllModel.getCalo());
+        nameall2.setText(viewAllModel.getName());
+        ingredientall2.setText(viewAllModel.getIngredient());
+        timeall2.setText(viewAllModel.getTime());
+        typeall2.setText(viewAllModel.getType());
+
+        Glide.with(getApplicationContext()).load(viewAllModel.getImg_url()).into(showall3);
+        caloall3.setText(viewAllModel.getCalo());
+        nameall3.setText(viewAllModel.getName());
+        instruction3.setText(viewAllModel.getInstruction());
+        timeall3.setText(viewAllModel.getTime());
+        typeall3.setText(viewAllModel.getType());
+
+
         btnexit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        btnexit2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        btnexit3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -59,11 +111,11 @@ public class ShowAllActivity extends AppCompatActivity {
         tab.addTab(tab1);
         TabHost.TabSpec tab2 = tab.newTabSpec("t2");
         tab2.setContent(R.id.tab2);
-        tab2.setIndicator("INGREDIENTS");
+        tab2.setIndicator("INGREDIENT");
         tab.addTab(tab2);
         TabHost.TabSpec tab3 = tab.newTabSpec("t3");
         tab3.setContent(R.id.tab3);
-        tab3.setIndicator("INSTRUCTIONS");
+        tab3.setIndicator("INSTRUCTION");
         tab.addTab(tab3);
     }
 

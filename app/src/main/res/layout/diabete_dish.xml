@@ -14,7 +14,7 @@
         android:background="#FFFFFF">
         <com.makeramen.roundedimageview.RoundedImageView
             android:layout_width="280dp"
-            android:layout_height="190dp"
+            android:layout_height="180dp"
             android:id="@+id/dia_img"
             app:riv_corner_radius="14dp"
             android:scaleType="centerCrop"
@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Popular dish"
+            android:paddingTop="5dp"
             android:textColor="@color/black"
             android:textSize="19sp"
             android:textStyle="bold"
@@ -36,6 +37,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:singleLine="true"
+            android:paddingBottom="2dp"
             android:text="description"
              />
 
@@ -43,6 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:padding="2dp"
             android:orientation="horizontal">
 
             <ImageView

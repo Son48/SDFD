@@ -1,5 +1,6 @@
 package com.example.sdfd.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -40,6 +41,8 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
         holder.viewname.setText(viewAllModelList.get(position).getName());
         holder.viewdescription.setText(viewAllModelList.get(position).getDescription());
         holder.viewcalo.setText(viewAllModelList.get(position).getCalo());
+        holder.viewtime.setText(viewAllModelList.get(position).getTime());
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,13 +60,14 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView viewImg;
-        TextView viewname,viewdescription,viewcalo;
+        TextView viewname,viewdescription,viewcalo,viewtime;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             viewImg=itemView.findViewById(R.id.view_img);
             viewname=itemView.findViewById(R.id.name_viewitem);
             viewdescription=itemView.findViewById(R.id.des_viewitem);
             viewcalo=itemView.findViewById(R.id.calo_viewitem);
+            viewtime=itemView.findViewById(R.id.time_viewitem);
         }
     }
 }

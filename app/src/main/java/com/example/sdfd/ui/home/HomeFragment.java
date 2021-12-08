@@ -122,7 +122,9 @@ public class HomeFragment extends Fragment {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
+                                String Popularid=document.getId();
                                 PopularModel popularModel=document.toObject(PopularModel.class);
+                                popularModel.setId(Popularid);
                                 popularModelList.add(popularModel);
                                 popularAdapter.notifyDataSetChanged();
                             }
@@ -191,14 +193,18 @@ public class HomeFragment extends Fragment {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                WeightlossModel weightlossModel=document.toObject(WeightlossModel.class);
-                                weightlossModelList.add(weightlossModel);
                                 weightlossAdapter.notifyDataSetChanged();
+                                String Weightlossid=document.getId();
+                                weightlossModel.setId(Weightlossid);
+                                weightlossModelList.add(weightlossModel);
                             }
                         } else {
                             Toast.makeText(getActivity(), "Error"+task.getException(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+
+
         // hear item
         hearRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
         hearModelList =new ArrayList<>();
@@ -222,7 +228,7 @@ public class HomeFragment extends Fragment {
                     }
                 });
 
-        ////search popular
+
         recyclerViewSearch=root.findViewById(R.id.search_rec);
         searchbox=root.findViewById(R.id.search_box);
         viewAllModelList =new ArrayList<>();
@@ -255,24 +261,25 @@ public class HomeFragment extends Fragment {
         return root;
     }
 
-    private void searchproduct(String toString) {
-        if(!toString.isEmpty()){
-            db.collection("ViewAllItem").whereEqualTo("name",toString).get()
-            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                    if(task.isSuccessful() && task.getResult()!=null){
-                        viewAllModelList.clear();
-                        viewAllAdapter.notifyDataSetChanged();
-                        for (DocumentSnapshot doc: task.getResult().getDocuments()){
-                            ViewAllModel viewAllModel=doc.toObject(ViewAllModel.class);
-                            viewAllModelList.add(viewAllModel);
-                            viewAllAdapter.notifyDataSetChanged();
+    private void searchproduct(String name) {
+        if(!name.isEmpty()){
+            db.collection("ViewAllItem").orderBy("name").whereGreaterThanOrEqualTo("name", name)
+                    .whereLessThanOrEqualTo("name", name + "\uf8ff").get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if(task.isSuccessful() && task.getResult()!=null){
+                                viewAllModelList.clear();
+                                viewAllAdapter.notifyDataSetChanged();
+                                for (DocumentSnapshot doc: task.getResult().getDocuments()){
+                                    ViewAllModel viewAllModel=doc.toObject(ViewAllModel.class);
+                                    viewAllModelList.add(viewAllModel);
+                                    viewAllAdapter.notifyDataSetChanged();
 
+                                }
+                            }
                         }
-                    }
-                }
-            });
+                    });
         }
     }
 

@@ -11,13 +11,13 @@
         android:orientation="vertical"
         android:padding="5dp"
         android:background="#FFFFFF">
-<com.makeramen.roundedimageview.RoundedImageView
-    android:layout_width="280dp"
-    android:layout_height="190dp"
-    android:id="@+id/popular_img"
-    app:riv_corner_radius="14dp"
-    android:scaleType="centerCrop"
-    android:src="@mipmap/popularimg" />
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="280dp"
+            android:layout_height="190dp"
+            android:id="@+id/popular_img"
+            app:riv_corner_radius="14dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/popularimg" />
 
         <TextView
             android:id="@+id/pop_name"
@@ -63,14 +63,16 @@
                 android:fontFamily="@font/alice"
                 android:textStyle="bold" />
 
+
             <ImageView
+                android:id="@+id/disfavorite_po"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:src="@drawable/ic_menu_favorite" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/cout_fapo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -79,6 +81,10 @@
                 android:fontFamily="@font/alice"
                 android:textStyle="bold"
                 android:text="0" />
+
+
+
+
 
             <ImageView
                 android:id="@+id/imageView8"
@@ -88,15 +94,15 @@
                 app:srcCompat="@drawable/ic_time" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/pop_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="18dp"
-                android:textColor="@color/black"
                 android:fontFamily="@font/alice"
-                android:textStyle="bold"
-                android:text="0" />
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 

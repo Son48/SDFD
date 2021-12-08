@@ -37,4 +37,10 @@
         android:name="com.example.sdfd.LogoutFragment"
         android:label="@string/history"
         tools:layout="@layout/fragment_logout" />
+    <fragment
+        android:id="@+id/nav_scanproduct"
+        android:name="com.example.sdfd.ScanproductFragment"
+        android:label="Scan Product"
+        tools:layout="@layout/fragment_scanproduct" />
+
 </navigation>
