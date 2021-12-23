@@ -21,4 +21,7 @@
     <string name="register">Register</string>
     <string name="sign_in">Sign in</string>
     <string name="login">Login</string>
+    <string name="calo">calo</string>
+    <string name="Calo">Calo</string>
+    <string name="menu">Menu</string>
 </resources>

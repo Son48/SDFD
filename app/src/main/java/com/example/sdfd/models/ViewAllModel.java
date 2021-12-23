@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class ViewAllModel implements Serializable {
     String description;
     String name;
-    String calo;
+    double calo;
     String img_url;
     String type;
     String time;
@@ -15,7 +15,7 @@ public class ViewAllModel implements Serializable {
     public ViewAllModel() {
     }
 
-    public ViewAllModel(String description, String name, String calo, String img_url, String type, String time, String ingredient, String instruction) {
+    public ViewAllModel(String description, String name, double calo, String img_url, String type, String time, String ingredient, String instruction) {
         this.description = description;
         this.name = name;
         this.calo = calo;
@@ -42,11 +42,11 @@ public class ViewAllModel implements Serializable {
         this.name = name;
     }
 
-    public String getCalo() {
+    public double getCalo() {
         return calo;
     }
 
-    public void setCalo(String calo) {
+    public void setCalo(double calo) {
         this.calo = calo;
     }
 

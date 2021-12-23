@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.HashMap;
+
 public class ProfileFragment extends Fragment {
 
     FirebaseStorage storage;
@@ -40,7 +43,7 @@ public class ProfileFragment extends Fragment {
     FirebaseDatabase firebaseDatabase;
 
     ImageView imguser;
-    TextInputLayout name,email,phone,pass;
+    EditText name,email,phone,pass;
     TextView namefiled,emailfiled;
     Button updateprofile;
 
@@ -69,10 +72,10 @@ public class ProfileFragment extends Fragment {
                         UserClass user =snapshot.getValue(UserClass.class);
                         namefiled.setText(user.getName());
                         emailfiled.setText(user.getEmail());
-                        name.setPrefixText(user.getName());
-                        phone.setPrefixText(user.getPhone());
-                        email.setPrefixText(user.getEmail());
-                        pass.setPrefixText(user.getPass());
+                        name.setText(user.getName());
+                        phone.setText(user.getPhone());
+                        email.setText(user.getEmail());
+                        pass.setText(user.getPass());
 
                         Glide.with(getContext()).load(user.getProfileImg()).into(imguser);
                     }
@@ -104,7 +107,15 @@ public class ProfileFragment extends Fragment {
     }
 
     private void updateUserProfile() {
-
+        final HashMap<String, Object> profilemap = new HashMap<>();
+        profilemap.put("name",name.getText().toString());
+        profilemap.put("email",email.getText().toString());
+        profilemap.put("phone",phone.getText().toString());
+        profilemap.put("pass",pass.getText().toString());
+        DatabaseReference databaseReference;
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+        databaseReference.child(firebaseAuth.getUid()).updateChildren(profilemap);
     }
 
     @Override

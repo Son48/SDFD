@@ -1,6 +1,8 @@
 package com.example.sdfd.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sdfd.R;
+import com.example.sdfd.activity.ShowPopularActivity;
 import com.example.sdfd.models.HistoryModel;
 
 import java.util.List;
@@ -30,7 +33,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HistoryAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull HistoryAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.namehis.setText(historyModels.get(position).getName());
         holder.datehis.setText(historyModels.get(position).getCurentDate());
         holder.timehis.setText(historyModels.get(position).getCurentTime());

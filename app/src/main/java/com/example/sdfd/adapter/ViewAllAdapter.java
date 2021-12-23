@@ -14,8 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.sdfd.R;
-import com.example.sdfd.ShowAllActivity;
-import com.example.sdfd.ViewAllActivity;
+import com.example.sdfd.activity.ShowAllActivity;
 import com.example.sdfd.models.ViewAllModel;
 
 import java.util.List;
@@ -36,11 +35,11 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Glide.with(context).load(viewAllModelList.get(position).getImg_url()).into(holder.viewImg);
         holder.viewname.setText(viewAllModelList.get(position).getName());
         holder.viewdescription.setText(viewAllModelList.get(position).getDescription());
-        holder.viewcalo.setText(viewAllModelList.get(position).getCalo());
+        holder.viewcalo.setText(String.valueOf(viewAllModelList.get(position).getCalo()));
         holder.viewtime.setText(viewAllModelList.get(position).getTime());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

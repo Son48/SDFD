@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class WeightlossModel implements Serializable {
     String description;
     String name;
-    String calo;
+    double calo;
     String img_url;
     String type;
     String time;
@@ -26,7 +26,7 @@ public class WeightlossModel implements Serializable {
     public WeightlossModel() {
     }
 
-    public WeightlossModel(String description, String name, String calo, String img_url, String type, String time) {
+    public WeightlossModel(String description, String name, double calo, String img_url, String type, String time) {
         this.description = description;
         this.name = name;
         this.calo = calo;
@@ -51,11 +51,11 @@ public class WeightlossModel implements Serializable {
         this.name = name;
     }
 
-    public String getCalo() {
+    public double getCalo() {
         return calo;
     }
 
-    public void setCalo(String calo) {
+    public void setCalo(double calo) {
         this.calo = calo;
     }
 

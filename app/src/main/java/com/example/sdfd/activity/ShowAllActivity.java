@@ -1,4 +1,4 @@
-package com.example.sdfd;
+package com.example.sdfd.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,9 +11,12 @@ import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.sdfd.R;
 import com.example.sdfd.adapter.ViewAllAdapter;
 import com.example.sdfd.models.DiabetesModel;
 import com.example.sdfd.models.ViewAllModel;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ShowAllActivity extends AppCompatActivity {
     ImageView showall,showall2,showall3;
@@ -21,6 +24,9 @@ public class ShowAllActivity extends AppCompatActivity {
     TabHost tab;
     Button btnexit,btnexit2,btnexit3;
     ViewAllModel viewAllModel = null;
+    FirebaseFirestore firestore;
+    FirebaseAuth firebaseAuth;
+    boolean isInMyFavorite=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,18 +43,18 @@ public class ShowAllActivity extends AppCompatActivity {
         ingredientall2=findViewById(R.id.ingredient_showall2);
         showall2=findViewById(R.id.show_all_po_img2);
         nameall2=findViewById(R.id.show_all_po_name2);
-        caloall2=findViewById(R.id.show_all_po_calo2);
+
         btnexit2=findViewById(R.id.btn_exit2);
         typeall2=findViewById(R.id.show_all_po_type2);
-        timeall2=findViewById(R.id.show_all_po_time2);
+
 
         instruction3=findViewById(R.id.instruction_showall3);
         showall3=findViewById(R.id.show_all_po_img3);
         nameall3=findViewById(R.id.show_all_po_name3);
-        caloall3=findViewById(R.id.show_all_po_calo3);
+
         btnexit3=findViewById(R.id.btn_exit3);
         typeall3=findViewById(R.id.show_all_po_type3);
-        timeall3=findViewById(R.id.show_all_po_time3);
+
 
 
 
@@ -61,24 +67,23 @@ public class ShowAllActivity extends AppCompatActivity {
         }
 
         Glide.with(getApplicationContext()).load(viewAllModel.getImg_url()).into(showall);
-        calo.setText(viewAllModel.getCalo());
+        calo.setText(String.valueOf(viewAllModel.getCalo()));
         name.setText(viewAllModel.getName());
         type.setText(viewAllModel.getType());
         time.setText(viewAllModel.getTime());
         descriptions.setText(viewAllModel.getDescription());
 
         Glide.with(getApplicationContext()).load(viewAllModel.getImg_url()).into(showall2);
-        caloall2.setText(viewAllModel.getCalo());
+
         nameall2.setText(viewAllModel.getName());
         ingredientall2.setText(viewAllModel.getIngredient());
-        timeall2.setText(viewAllModel.getTime());
         typeall2.setText(viewAllModel.getType());
 
         Glide.with(getApplicationContext()).load(viewAllModel.getImg_url()).into(showall3);
-        caloall3.setText(viewAllModel.getCalo());
+
         nameall3.setText(viewAllModel.getName());
         instruction3.setText(viewAllModel.getInstruction());
-        timeall3.setText(viewAllModel.getTime());
+
         typeall3.setText(viewAllModel.getType());
 
 

@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class PopularModel implements Serializable {
     String name;
     String description;
-    String calo;
+    double calo;
     String img_url;
     String ingredient;
     String time;
@@ -27,7 +27,7 @@ public class PopularModel implements Serializable {
     public PopularModel() {
     }
 
-    public PopularModel(String name, String description, String calo, String img_url, String ingredient, String time, String type, String instruction) {
+    public PopularModel(String name, String description, double calo, String img_url, String ingredient, String time, String type, String instruction) {
         this.name = name;
         this.description = description;
         this.calo = calo;
@@ -54,11 +54,11 @@ public class PopularModel implements Serializable {
         this.description = description;
     }
 
-    public String getCalo() {
+    public double getCalo() {
         return calo;
     }
 
-    public void setCalo(String calo) {
+    public void setCalo(double calo) {
         this.calo = calo;
     }
 

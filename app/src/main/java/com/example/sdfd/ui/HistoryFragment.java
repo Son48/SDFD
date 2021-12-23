@@ -1,4 +1,4 @@
-package com.example.sdfd;
+package com.example.sdfd.ui;
 
 import android.os.Bundle;
 
@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.sdfd.R;
 import com.example.sdfd.adapter.HistoryAdapter;
 import com.example.sdfd.models.HistoryModel;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -39,7 +40,7 @@ public class HistoryFragment extends Fragment {
         auth=FirebaseAuth.getInstance();
         hisRec=root.findViewById(R.id.his_rec);
 
-        hisRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
+        hisRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
         historyModelList =new ArrayList<>();
         historyAdapter=new HistoryAdapter(getActivity(),historyModelList);
         hisRec.setAdapter(historyAdapter);

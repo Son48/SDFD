@@ -64,24 +64,6 @@
                 android:textStyle="bold" />
 
 
-            <ImageView
-                android:id="@+id/disfavorite_po"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/ic_menu_favorite" />
-
-            <TextView
-                android:id="@+id/cout_fapo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="18dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/alice"
-                android:textStyle="bold"
-                android:text="0" />
-
 
 
 

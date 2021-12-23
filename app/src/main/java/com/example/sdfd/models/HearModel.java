@@ -1,18 +1,33 @@
 package com.example.sdfd.models;
 
+import com.google.firebase.firestore.Exclude;
+
 import java.io.Serializable;
 
 public class HearModel implements Serializable {
     String name;
     String description;
-    String calo;
+    int calo;
     String img_url;
+    String type;
+    String time;
+    @Exclude
+    private String hearid;
 
-    public HearModel(String name, String description, String calo, String img_url) {
+    public String getHearid() {
+        return hearid;
+    }
+
+    public void setHearid(String hearid) {
+        this.hearid = hearid;
+    }
+
+    public HearModel(String name, String description, int calo, String img_url) {
         this.name = name;
         this.description = description;
         this.calo = calo;
         this.img_url = img_url;
+
     }
 
     public HearModel() {
@@ -34,11 +49,11 @@ public class HearModel implements Serializable {
         this.description = description;
     }
 
-    public String getCalo() {
+    public int getCalo() {
         return calo;
     }
 
-    public void setCalo(String calo) {
+    public void setCalo(int calo) {
         this.calo = calo;
     }
 

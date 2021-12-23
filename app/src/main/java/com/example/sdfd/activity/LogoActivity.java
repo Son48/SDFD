@@ -13,11 +13,9 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.sdfd.MainActivity;
 import com.example.sdfd.R;
 
 public class LogoActivity extends AppCompatActivity {

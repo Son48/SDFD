@@ -10,14 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.sdfd.R;
-import com.example.sdfd.ShowDiabetesActivity;
-import com.example.sdfd.ShowHearActivity;
-import com.example.sdfd.models.DiabetesModel;
+import com.example.sdfd.activity.ShowHearActivity;
 import com.example.sdfd.models.HearModel;
 
 import java.util.List;
@@ -38,11 +35,11 @@ public class HearAdapter extends RecyclerView.Adapter<HearAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HearAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull HearAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Glide.with(context).load(hearModelList.get(position).getImg_url()).into(holder.hearImg);
         holder.hname.setText(hearModelList.get(position).getName());
         holder.hdescription.setText(hearModelList.get(position).getDescription());
-        holder.hcalo.setText(hearModelList.get(position).getCalo());
+        holder.hcalo.setText(String.valueOf(hearModelList.get(position).getCalo()));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

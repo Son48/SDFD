@@ -98,12 +98,135 @@
                 android:textColor="#000000"/>
 
         </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/home_catpopular_img"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        app:cardCornerRadius="8dp"
+        android:layout_marginLeft="45dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:id="@+id/category_rec"/>
+            android:background="#FF9800"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/salad" />
+
+            <TextView
+                android:id="@+id/cat_home_name"
+                android:layout_width="65dp"
+                android:layout_height="60dp"
+                android:text="Popular Dish"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/home_catwl_img"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        app:cardCornerRadius="8dp"
+        android:layout_marginLeft="30dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF9800"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/salad" />
+
+            <TextView
+                android:layout_width="65dp"
+                android:layout_height="60dp"
+                android:text="Weight Loss"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/home_cathear_img"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        app:cardCornerRadius="8dp"
+        android:layout_marginLeft="30dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF9800"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/salad" />
+
+            <TextView
+                android:layout_width="65dp"
+                android:layout_height="60dp"
+                android:text="Heart Disease"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/home_catdia_img"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        app:cardCornerRadius="8dp"
+        android:layout_marginLeft="30dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF9800"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/salad" />
+
+            <TextView
+
+                android:layout_width="65dp"
+                android:layout_height="60dp"
+                android:text="Diabetics"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+
 
         <LinearLayout
             android:layout_marginLeft="10dp"

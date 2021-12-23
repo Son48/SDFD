@@ -1,22 +1,39 @@
 package com.example.sdfd.models;
 
+import com.google.firebase.firestore.Exclude;
+
 import java.io.Serializable;
+
+import javax.annotation.meta.Exclusive;
 
 public class DiabetesModel implements Serializable {
     String name;
     String description;
-    String calo;
+    int calo;
     String img_url;
+    String type;
+    String time;
+    @Exclude
+    private String iddia;
+
+    public String getIddia() {
+        return iddia;
+    }
+
+    public void setIddia(String iddia) {
+        this.iddia = iddia;
+    }
 
     public DiabetesModel() {
     }
 
-    public DiabetesModel(String name, String description, String calo, String img_url) {
+    public DiabetesModel(String name, String description, int calo, String img_url) {
         this.name = name;
         this.description = description;
         this.calo = calo;
         this.img_url = img_url;
     }
+
 
     public String getName() {
         return name;
@@ -34,11 +51,11 @@ public class DiabetesModel implements Serializable {
         this.description = description;
     }
 
-    public String getCalo() {
+    public int getCalo() {
         return calo;
     }
 
-    public void setCalo(String calo) {
+    public void setCalo(int calo) {
         this.calo = calo;
     }
 

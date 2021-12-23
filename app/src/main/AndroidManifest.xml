@@ -10,22 +10,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SDFD">
         <activity
-            android:name=".ShowAllActivity"
+            android:name=".activity.ShowFavoriteActivity"
             android:exported="true" />
         <activity
-            android:name=".ViewAllActivity"
+            android:name=".activity.ViewAllDiabetesActivity"
             android:exported="true" />
         <activity
-            android:name=".ShowHearActivity"
+            android:name=".activity.ViewAllHearActivity"
             android:exported="true" />
         <activity
-            android:name=".ShowWeightlossActivity"
+            android:name=".activity.ViewAllWeightLossActivity"
             android:exported="true" />
         <activity
-            android:name=".ShowPopularActivity"
+            android:name=".activity.ShowHisActivity"
             android:exported="true" />
         <activity
-            android:name=".ShowDiabetesActivity"
+            android:name=".activity.ShowAllActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ViewAllActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ShowHearActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ShowWeightlossActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ShowPopularActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ShowDiabetesActivity"
             android:exported="true" />
         <activity
             android:name=".activity.RegisterActivity"
@@ -34,7 +49,7 @@
             android:name=".activity.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.SDFD.NoActionBar" />

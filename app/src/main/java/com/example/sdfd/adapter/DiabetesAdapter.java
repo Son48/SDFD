@@ -15,10 +15,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.sdfd.R;
-import com.example.sdfd.ShowDiabetesActivity;
+import com.example.sdfd.activity.ShowDiabetesActivity;
 import com.example.sdfd.models.DiabetesModel;
-import com.example.sdfd.models.HomeCategory;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 
 public class DiabetesAdapter extends RecyclerView.Adapter<DiabetesAdapter.ViewHolder> {
@@ -37,11 +49,17 @@ public class DiabetesAdapter extends RecyclerView.Adapter<DiabetesAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DiabetesAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DiabetesAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Glide.with(context).load(diabetesModelList.get(position).getImg_url()).into(holder.diaImg);
         holder.name.setText(diabetesModelList.get(position).getName());
         holder.description.setText(diabetesModelList.get(position).getDescription());
-        holder.calo.setText(diabetesModelList.get(position).getCalo());
+        holder.calo.setText(String.valueOf(diabetesModelList.get(position).getCalo()));
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+        DiabetesModel diabetesModel=diabetesModelList.get(position);
+        final CollectionReference collection = firestore.collection("Favorite").document(diabetesModel.getIddia())
+                .collection("CurrentUser");
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,10 +67,34 @@ public class DiabetesAdapter extends RecyclerView.Adapter<DiabetesAdapter.ViewHo
                 Intent intent=new Intent(context, ShowDiabetesActivity.class);
                 intent.putExtra("detail",diabetesModelList.get(position));
                 context.startActivity(intent);
+
+                //date,time
+                String saveCurentDate,saveCurentTime;
+                Calendar calendar=Calendar.getInstance();
+
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM,dd,yyyy");
+                saveCurentDate=simpleDateFormat.format(calendar.getTime());
+
+                SimpleDateFormat simpleTimeFormat = new SimpleDateFormat("HH:mm:ss a");
+                saveCurentTime=simpleTimeFormat.format(calendar.getTime());
+
+                final HashMap<String,Object> hismap=new HashMap<>();
+
+                hismap.put("name",diabetesModelList.get(position).getName());
+                hismap.put("curentDate",saveCurentDate);
+                hismap.put("curentTime",saveCurentTime);
+                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+
+                firestore.collection("History").document(firebaseAuth.getCurrentUser().getUid())
+                        .collection("CurentUser").add(hismap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentReference> task) {
+                    }
+                });
             }
         });
     }
-
     @Override
     public int getItemCount() {
         return diabetesModelList.size();
@@ -61,7 +103,6 @@ public class DiabetesAdapter extends RecyclerView.Adapter<DiabetesAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView diaImg;
         TextView name,description,calo;
-        CardView btnclickviewde;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             diaImg=itemView.findViewById(R.id.dia_img);
@@ -72,3 +113,4 @@ public class DiabetesAdapter extends RecyclerView.Adapter<DiabetesAdapter.ViewHo
         }
     }
 }
+

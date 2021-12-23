@@ -1,15 +1,23 @@
 package com.example.sdfd.models;
 
-public class HistoryModel {
+import java.io.Serializable;
+
+public class HistoryModel implements Serializable {
     String name;
+    int calo;
+    String description;
+    String img_url;
     String curentDate;
     String curentTime;
 
     public HistoryModel() {
     }
 
-    public HistoryModel(String name, String curentDate, String curentTime) {
+    public HistoryModel(String name, int calo, String description, String img_url, String curentDate, String curentTime) {
         this.name = name;
+        this.calo = calo;
+        this.description = description;
+        this.img_url = img_url;
         this.curentDate = curentDate;
         this.curentTime = curentTime;
     }
@@ -20,6 +28,30 @@ public class HistoryModel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getCalo() {
+        return calo;
+    }
+
+    public void setCalo(int calo) {
+        this.calo = calo;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImg_url() {
+        return img_url;
+    }
+
+    public void setImg_url(String img_url) {
+        this.img_url = img_url;
     }
 
     public String getCurentDate() {

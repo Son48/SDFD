@@ -24,23 +24,28 @@
         tools:layout="@layout/fragment_category" />
     <fragment
         android:id="@+id/nav_favorite"
-        android:name="com.example.sdfd.FavoriteFragment"
+        android:name="com.example.sdfd.ui.FavoriteFragment"
         android:label="@string/favorite"
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/nav_history"
-        android:name="com.example.sdfd.HistoryFragment"
+        android:name="com.example.sdfd.ui.HistoryFragment"
         android:label="@string/history"
         tools:layout="@layout/fragment_history" />
     <fragment
-        android:id="@+id/nav_logout"
-        android:name="com.example.sdfd.LogoutFragment"
-        android:label="@string/history"
-        tools:layout="@layout/fragment_logout" />
+        android:id="@+id/nav_calo"
+        android:name="com.example.sdfd.ui.CaloFragment"
+        android:label="@string/Calo"
+        tools:layout="@layout/fragment_calo" />
     <fragment
         android:id="@+id/nav_scanproduct"
-        android:name="com.example.sdfd.ScanproductFragment"
+        android:name="com.example.sdfd.ui.ScanproductFragment"
         android:label="Scan Product"
         tools:layout="@layout/fragment_scanproduct" />
+    <fragment
+        android:id="@+id/nav_menu"
+        android:name="com.example.sdfd.ui.nav_menu"
+        android:label="Menu"
+        tools:layout="@layout/fragment_nav_menu" />
 
 </navigation>

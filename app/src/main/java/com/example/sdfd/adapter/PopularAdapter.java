@@ -14,20 +14,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.sdfd.R;
-import com.example.sdfd.ShowDiabetesActivity;
-import com.example.sdfd.ShowPopularActivity;
-import com.example.sdfd.ViewAllActivity;
+import com.example.sdfd.activity.ShowPopularActivity;
 import com.example.sdfd.models.PopularModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -56,7 +50,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
         Glide.with(context).load(popularModelList.get(position).getImg_url()).into(holder.popImg);
         holder.name.setText(popularModelList.get(position).getName());
         holder.description.setText(popularModelList.get(position).getDescription());
-        holder.calo.setText(popularModelList.get(position).getCalo());
+        holder.calo.setText(String.valueOf(popularModelList.get(position).getCalo()));
         holder.timepo.setText(popularModelList.get(position).getTime());
 
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -65,69 +59,69 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
         final CollectionReference collection = firestore.collection("Favorite").document(popularModel.getId())
                 .collection("CurrentUser");
 
-        //status fa
-        final EventListener<DocumentSnapshot> checkifLiked = new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(DocumentSnapshot documentSnapshot, FirebaseFirestoreException e) {
-
-                if (documentSnapshot.exists()){
-                    holder.disfa_po.setImageResource(R.drawable.ic_baseline_favorite_24);
-
-                }else {
-                    holder.disfa_po.setImageResource(R.drawable.ic_menu_favorite);
-
-                }
-
-            }
-        };
-        collection.document(firebaseAuth.getCurrentUser().getUid()).addSnapshotListener(checkifLiked);
-
-        //cout fa
-        final EventListener<QuerySnapshot> likeEvent = new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
-                String likes = String.valueOf(documentSnapshots.getDocuments().size());
-                if (likes.equals("0")){
-                    holder.coutfapo.setText("");
-                }else {
-                    holder.coutfapo.setText(likes);
-                }
-            }
-        };
-        collection.addSnapshotListener(likeEvent);
-
-
-        //add fa
-        holder.disfa_po.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final CollectionReference collection = firestore.collection("Favorite").document(popularModel.getId())
-                        .collection("CurrentUser");
-                collection.document(firebaseAuth.getCurrentUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if(task.isSuccessful()&& task.getResult().exists()){
-                            collection.document(firebaseAuth.getCurrentUser().getUid()).delete();
-
-                        }
-                        else {
-                            HashMap<String,Object> famap= new HashMap<>();
-                            famap.put("name",popularModelList.get(position).getName());
-                            famap.put("calo",popularModelList.get(position).getCalo());
-                            famap.put("img_url",popularModelList.get(position).getImg_url());
-                            famap.put("description",popularModelList.get(position).getDescription());
-                            famap.put("type",popularModelList.get(position).getType());
-                            famap.put("time",popularModelList.get(position).getTime());
-
-                            collection.document(firebaseAuth.getCurrentUser().getUid()).set(famap);
-
-                        }
-
-                    }
-                });
-
-            }
-        });
+//        //status fa
+//        final EventListener<DocumentSnapshot> checkifLiked = new EventListener<DocumentSnapshot>() {
+//            @Override
+//            public void onEvent(DocumentSnapshot documentSnapshot, FirebaseFirestoreException e) {
+//
+//                if (documentSnapshot.exists()){
+//                    holder.disfa_po.setImageResource(R.drawable.ic_baseline_favorite_24);
+//
+//                }else {
+//                    holder.disfa_po.setImageResource(R.drawable.ic_menu_favorite);
+//
+//                }
+//
+//            }
+//        };
+//        collection.document(firebaseAuth.getCurrentUser().getUid()).addSnapshotListener(checkifLiked);
+//
+//        //cout fa
+//        final EventListener<QuerySnapshot> likeEvent = new EventListener<QuerySnapshot>() {
+//            @Override
+//            public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
+//                String likes = String.valueOf(documentSnapshots.getDocuments().size());
+//                if (likes.equals("0")){
+//                    holder.coutfapo.setText("");
+//                }else {
+//                    holder.coutfapo.setText(likes);
+//                }
+//            }
+//        };
+//        collection.addSnapshotListener(likeEvent);
+//
+//
+//        //add fa
+//        holder.disfa_po.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                final CollectionReference collection = firestore.collection("Favorite").document(popularModel.getId())
+//                        .collection("CurrentUser");
+//                collection.document(firebaseAuth.getCurrentUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                        if(task.isSuccessful()&& task.getResult().exists()){
+//                            collection.document(firebaseAuth.getCurrentUser().getUid()).delete();
+//
+//                        }
+//                        else {
+//                            HashMap<String,Object> famap= new HashMap<>();
+//                            famap.put("name",popularModelList.get(position).getName());
+//                            famap.put("calo",popularModelList.get(position).getCalo());
+//                            famap.put("img_url",popularModelList.get(position).getImg_url());
+//                            famap.put("description",popularModelList.get(position).getDescription());
+//                            famap.put("type",popularModelList.get(position).getType());
+//                            famap.put("time",popularModelList.get(position).getTime());
+//
+//                            collection.document(firebaseAuth.getCurrentUser().getUid()).set(famap);
+//
+//                        }
+//
+//                    }
+//                });
+//
+//            }
+//        });
 
         //history and show dish
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -152,6 +146,9 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
                 final HashMap<String,Object> hismap=new HashMap<>();
 
                 hismap.put("name",popularModelList.get(position).getName());
+                hismap.put("description",popularModelList.get(position).getDescription());
+                hismap.put("calo",popularModelList.get(position).getCalo());
+                hismap.put("img_url",popularModelList.get(position).getImg_url());
                 hismap.put("curentDate",saveCurentDate);
                 hismap.put("curentTime",saveCurentTime);
                 FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -175,16 +172,14 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        ImageView popImg,disfa_po;
-        TextView name,description,calo,coutfapo,timepo;
+        ImageView popImg;
+        TextView name,description,calo,timepo;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             popImg=itemView.findViewById(R.id.popular_img);
             name=itemView.findViewById(R.id.pop_name);
             description=itemView.findViewById(R.id.pop_des);
             calo=itemView.findViewById(R.id.pop_calo);
-            disfa_po=itemView.findViewById(R.id.disfavorite_po);
-            coutfapo=itemView.findViewById(R.id.cout_fapo);
             timepo=itemView.findViewById(R.id.pop_time);
         }
     }
